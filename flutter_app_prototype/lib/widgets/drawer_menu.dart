@@ -12,7 +12,7 @@ class DrawerMenu extends StatelessWidget {
       ListTile(
         title: const Text("Today's Picture"),
         subtitle: const Text('Home page'),
-        leading: const Icon(Icons.adjust),
+        leading: const Icon(Icons.stars),
         onTap: () {
           Navigator.pushReplacementNamed(context, 'home');
         },
@@ -21,18 +21,18 @@ class DrawerMenu extends StatelessWidget {
       ListTile(
         title: const Text('Picture'),
         subtitle: const Text("Pick the date, get the picture"),
-        leading: const Icon(Icons.adjust),
+        leading: const Icon(Icons.stars),
         onTap: () {
-          Navigator.pushReplacementNamed(context, 'harry');
+          Navigator.pushReplacementNamed(context, 'dayPicture');
         },
       ),
       const Divider(height: 15),
       ListTile(
         title: const Text('Pictures'),
         subtitle: const Text("Pick two dates, get all pictures"),
-        leading: const Icon(Icons.adjust),
+        leading: const Icon(Icons.stars),
         onTap: () {
-          Navigator.pushReplacementNamed(context, 'skills');
+          Navigator.pushReplacementNamed(context, 'range');
         },
       ),
       const Divider(height: 15),

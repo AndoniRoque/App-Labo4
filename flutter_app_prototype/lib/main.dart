@@ -16,9 +16,9 @@ class MyApp extends StatelessWidget {
       initialRoute: 'home',
       routes: {
         'home': (context) => const HomeScreen(),
-        'skills': (context) => const ListedSkillsPage(),
-        'harry': (context) => const HarryPage(),
-        'skill': (context) => const SkillPage(),
+        'range': (context) => const DayRangePicturesPage(),
+        'dayPicture': (context) => const SingleDayPicturePage(),
+        'singlePicture': (context) => const APictureFromRangePage(),
       },
     );
   }

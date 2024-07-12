@@ -3,16 +3,16 @@ import 'package:flutter_app_prototype/widgets/widgets.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-class HarryPage extends StatefulWidget {
-  const HarryPage({Key? key}) : super(key: key);
+class SingleDayPicturePage extends StatefulWidget {
+  const SingleDayPicturePage({Key? key}) : super(key: key);
 
   @override
-  State<HarryPage> createState() => _HarryPageState();
+  State<SingleDayPicturePage> createState() => _SingleDayPicturePageState();
 }
-class _HarryPageState extends State<HarryPage> {
+class _SingleDayPicturePageState extends State<SingleDayPicturePage> {
   int currentIndex = 0;
   String explanation = "Loading...";
-  String image = '';
+  String image = 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/800px-NASA_logo.svg.png';
   String title = 'Loading...';
   DateTime? selectedDate;
 
@@ -30,6 +30,7 @@ class _HarryPageState extends State<HarryPage> {
           title = data['title'];
           image = data['url'];
         });
+        print(image);
       } else {
         setState(() {
           explanation = "Failed to load explanation";
@@ -97,7 +98,7 @@ class _HarryPageState extends State<HarryPage> {
                     Container(
                       padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
-                        border: Border.all(width: 3.0, color: Colors.blueGrey),
+                        border: Border.all(width: 3.0, color: Colors.blueAccent),
                       ),
                       margin: const EdgeInsets.all(20),
                       child: Column(
@@ -126,9 +127,9 @@ class _HarryPageState extends State<HarryPage> {
           setState(() {
             currentIndex = value;
             if (currentIndex == 0) {
-              Navigator.pushReplacementNamed(context, 'harry');
+              Navigator.pushReplacementNamed(context, 'dayPicture');
             } else {
-              Navigator.pushReplacementNamed(context, 'skills');
+              Navigator.pushReplacementNamed(context, 'range');
             }
           });
         },

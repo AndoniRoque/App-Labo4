@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app_prototype/widgets/drawer_menu.dart';
 import 'package:flutter_app_prototype/widgets/portraits.dart';
 
-class SkillPage extends StatelessWidget {
-  const SkillPage({super.key});
+class APictureFromRangePage extends StatelessWidget {
+  const APictureFromRangePage({super.key});
 
   @override
   Widget build(BuildContext context) {

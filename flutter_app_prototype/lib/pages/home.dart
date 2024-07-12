@@ -16,7 +16,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
   String explanation = "Loading...";
-  String image = '';
+  String image = 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/800px-NASA_logo.svg.png';
   String title = 'Loading...';
 
   @override
@@ -78,9 +78,9 @@ class _HomeScreenState extends State<HomeScreen> {
           setState(() {
             currentIndex = value;
             if (currentIndex == 0) {
-              Navigator.pushReplacementNamed(context, 'harry');
+              Navigator.pushReplacementNamed(context, 'dayPicture');
             } else {
-              Navigator.pushReplacementNamed(context, 'skills');
+              Navigator.pushReplacementNamed(context, 'range');
             }
           });
         },

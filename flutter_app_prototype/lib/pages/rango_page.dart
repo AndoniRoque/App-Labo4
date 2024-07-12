@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_app_prototype/widgets/widgets.dart';
 
-class ListedSkillsPage extends StatefulWidget {
-  const ListedSkillsPage({Key? key}) : super(key: key);
+class DayRangePicturesPage extends StatefulWidget {
+  const DayRangePicturesPage({Key? key}) : super(key: key);
 
   @override
-  State<ListedSkillsPage> createState() => _ListedSkillsPageState();
+  State<DayRangePicturesPage> createState() => _DayRangePicturesPageState();
 }
 
-class _ListedSkillsPageState extends State<ListedSkillsPage> {
+class _DayRangePicturesPageState extends State<DayRangePicturesPage> {
   int currentIndex = 0;
   List<dynamic> nasaPictures = [];
   DateTime startDate = DateTime.now();
@@ -123,7 +123,7 @@ class _ListedSkillsPageState extends State<ListedSkillsPage> {
                     final image = nasaPictures[index];
                     return GestureDetector(
                       onTap: () {
-                        Navigator.pushReplacementNamed(context, 'skill',
+                        Navigator.pushReplacementNamed(context, 'singlePicture',
                             arguments: {
                               'title': image['title'],
                               'description': image['explanation'],
@@ -172,15 +172,20 @@ class _ListedSkillsPageState extends State<ListedSkillsPage> {
                                       decoration: BoxDecoration(
                                           border: Border.all(
                                               width: 1.8,
-                                              color: const Color.fromARGB(
-                                                  255, 172, 71, 17))),
-                                      child: Image.network(image['url'])),
+                                              color: Colors.red)),
+                                      child: Image.network(image['url'])
+                                  ),
                                 )
-                              ])),
+                              ]
+                          )
+                      ),
                     );
                   },
                 ),
-              if (nasaPictures.isEmpty) const Text('Selecciona un rango de fechas para ver las imágenes de NASA'),
+              if (nasaPictures.isEmpty)
+                const Center(
+                  child: Text('Selecciona un rango de fechas para ver las imágenes de NASA', textAlign: TextAlign.center,),
+                ),
             ],
           ),
         ),
@@ -191,9 +196,9 @@ class _ListedSkillsPageState extends State<ListedSkillsPage> {
           setState(() {
             currentIndex = value;
             if (currentIndex == 0) {
-              Navigator.pushReplacementNamed(context, 'harry');
+              Navigator.pushReplacementNamed(context, 'dayPicture');
             } else {
-              Navigator.pushReplacementNamed(context, 'skills');
+              Navigator.pushReplacementNamed(context, 'range');
             }
           });
         },
